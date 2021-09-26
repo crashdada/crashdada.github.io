@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            text-align:center;
+        }
+        #box {
+            width: 800px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto 10px;
+            font-size: 40px;
+            text-align: center;
+            line-height:  200px;
+        }
+    </style>
+</head>
+<body>
+<button id="debounce1_btn">debounce1</button>
+<button id="debounce2_btn">debounce2</button>
+<button id="throttle1_btn">throttle1</button>
+<button id="throttle2_btn">throttle2</button>
+<button id="throttle3_btn">throttle3</button>
+<button id="throttle4_btn">throttle4</button>
+<div id="box">
+1
+</div>
+<!--<button id="btn">点击取消</button>-->
+<script>
+    let count =1
+    let box = document.querySelector('#box')
+    let btn = document.querySelector('#btn')
+    let debounced = debounce3(counter,10000, true)
+    // box.onmousemove = throttle1(counter, 3000)
+    // box.onmousemove = throttle2(counter, 2000)
+    // box.onmousemove = throttle3(counter, 3000)
+    // box.onmousemove = throttle5(counter, 3000, {
+    //     leading: true,
+    //     trailing: false
+    // })
+    // box.onmousemove = debounce1(counter, 2000)
+    box.onmousemove = debounce2(counter, 2000, true)
+    btn.onclick = function() {
+        debounced.cancel()
+    }
+    function counter() {
+        count++
+        box.innerHTML = count
+    }
+    function debounce1(fn,wait){
+        let timeId
+        return function(){
+            let context = this
+            timeId && clearTimeout(timeId)
+            // 重新开始及时
+            timeId = setTimeout(() => {
+                fn.apply(context, arguments)
+            }, wait)
+        }
+    }
+    function debounce2(fn, wait,immediate ) {
+        let timeId;
+
+        return function () {
+            let context = this;
+            let args = arguments;
+
+            if (timeId) clearTimeout(timeId);
+            if (immediate) {
+                // 如果已经执行过，不再执行
+                let callNow = !timeId;
+                timeId = setTimeout(function(){
+                    timeId = null;
+                }, wait)
+                if (callNow) fn.apply(context, args)
+            }
+            else {
+                timeId = setTimeout(function(){
+                    fn.apply(context, args)
+                }, wait);
+            }
+        }
+    }
+    function debounce3(fn, wait,immediate) {
+        let timeId;
+
+        let debounced = function () {
+            let context = this;
+            let args = arguments;
+
+            if (timeId) clearTimeout(timeId);
+            // 是否是立即执行
+            if (immediate) {
+                // 如果已经执行过，不再执行
+                let callNow = !timeId;
+                timeId = setTimeout(function(){
+                    timeId = null;
+                }, wait)
+                if (callNow) fn.apply(context, args)
+            }
+            else {
+                timeId = setTimeout(function(){
+                    fn.apply(context, args)
+                }, wait);
+            }
+        }
+        debounced.cancel = function() {
+            clearTimeout(timeId)
+            timeId = null
+        }
+        return debounced
+    }
+    function throttle(fn, wait) {
+        // var prev = Date.now();
+        var prev = 0;
+        return function() {
+            var now = Date.now()
+            if(now - prev >= wait) {
+                fn.apply(this, arguments)
+                prev = now
+            }
+        }
+    }
+    function throttle2(fn ,wait) {
+        var timeId
+        return function() {
+            var context = this;
+            var args = arguments;
+            if(!timeId) {
+                timeId = setTimeout(() => {
+                    fn.apply(context, args)
+                    timeId = null
+                }, wait)
+            }
+
+        }
+    }
+    function throttle3(fn, wait) {
+        var timeId, context, args, result;
+        var previous = 0;
+
+        var later = function() {
+            previous = +new Date();
+            timeId = null;
+            fn.apply(context, args)
+        };
+
+        var throttled = function() {
+            var now = +new Date();
+            //下次触发 func 剩余的时间
+            var remaining = wait - (now - previous);
+            context = this;
+            args = arguments;
+            // 如果没有剩余的时间了
+            if (remaining <= 0) {
+                if (timeId) {
+                    clearTimeout(timeId);
+                    timeId = null;
+                }
+                previous = now;
+                fn.apply(context, args);
+            } else if (!timeId) {
+                timeId = setTimeout(later, remaining);
+            }
+        };
+        return throttled;
+    }
+    function throttle4(fn, wait, options) {
+        var timeId, context, args;
+        var previous = 0;
+        if (!options) options = {}
+        var later = function() {
+            previous = options.leading === false ? 0 : new Date().getTime();
+            timeId = null;
+            fn.apply(context, args)
+        };
+
+        var throttled = function(fn, wait, options) {
+            var now = +new Date();
+            if (!previous && options.leading === false) previous = now;
+            //下次触发 func 剩余的时间
+            var remaining = wait - (now - previous);
+            context = this;
+            args = arguments;
+            // 如果没有剩余的时间了
+            if (remaining <= 0) {
+                if (timeId) {
+                    clearTimeout(timeId);
+                    timeId = null;
+                }
+                previous = now;
+                fn.apply(context, args);
+            } else if (!timeId && options.trailing !== false) {
+                timeId = setTimeout(later, remaining);
+            }
+        };
+        return throttled;
+    }
+    function throttle5(func, wait, options) {
+        var timeId, context, args, result;
+        var previous = 0;
+        if (!options) options = {};
+
+        var later = function() {
+            previous = options.leading === false ? 0 : new Date().getTime();
+            timeId = null;
+            func.apply(context, args);
+            if (!timeId) context = args = null;
+        };
+
+        var throttled = function() {
+            var now = new Date().getTime();
+            if (!previous && options.leading === false) previous = now;
+            var remaining = wait - (now - previous);
+            context = this;
+            args = arguments;
+            if (remaining <= 0 || remaining > wait) {
+                if (timeId) {
+                    clearTimeout(timeId);
+                    timeId = null;
+                }
+                previous = now;
+                func.apply(context, args);
+                if (!timeId) context = args = null;
+            } else if (!timeId && options.trailing !== false) {
+                timeId = setTimeout(later, remaining);
+            }
+        };
+        return throttled;
+    }
+</script>
+</body>
+</html>
