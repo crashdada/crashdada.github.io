@@ -2,6 +2,7 @@
   * [简介](README.md)
   * [MD语法](syntax.md)    
 * **linux**
+     * [Linux常用命令](/linux/xiaobai/Linux常用命令)
      * [CentOS7初始化配置](/linux/xiaobai/CentOS7初始化配置)
      * [Ubuntu初始化](/linux/xiaobai/Ubuntu初始化)
      * [CentOS7常规命令](/linux/xiaobai/CentOS7常规命令)
