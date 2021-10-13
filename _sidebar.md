@@ -11,10 +11,11 @@
      * [Shell入门](/linux/xiaobai/Shell入门)
      * [Rclone相关命令](/linux/运维/Rclone相关命令)
      * [Ubuntu18.04LTS升级到20.04LTS](/linux/xiaobai/Ubuntu18.04LTS升级到20.04LTS)
+     * [ubuntu20.04系统初始化与美化](/linux/xiaobai/ubuntu20.04系统初始化与美化)
+     * [Ubuntu20.04&18.04快速开启BBR](/linux/xiaobai/Ubuntu20.04&18.04快速开启BBR)
      * [定时自动备份更新网站的脚本](/linux/运维/定时自动备份更新网站的脚本)
      * [OpenWRT路由器设置OpenConnectVPN](/linux/运维/OpenWRT路由器设置OpenConnectVPN)
      * [OpenConnect VPN自签证书配置](/linux/运维/OpenConnectVPN自签证书配置)
 * **python**
-    * [入门教程](/python/guidebook/)    
-* **服务器运维**
+    * [入门教程](/python/guidebook/)   
 
