@@ -1,3 +1,4 @@
+- [返回首页](/)
 - [linux](linux/)
   - [xiaobai](linux/xiaobai/)
     - [CentOS7初始化配置](linux/xiaobai/CentOS7初始化配置.md)
@@ -11,8 +12,8 @@
     - [ubuntu20.04系统初始化与美化](linux/xiaobai/ubuntu20.04系统初始化与美化.md)
     - [Ubuntu初始化](linux/xiaobai/Ubuntu初始化.md)
   - [运维](linux/运维/)
+    - [img](linux/运维/img/)
     - [OpenConnectVPN自签证书配置](linux/运维/OpenConnectVPN自签证书配置.md)
     - [OpenWRT路由器设置OpenConnectVPN](linux/运维/OpenWRT路由器设置OpenConnectVPN.md)
     - [Rclone相关命令](linux/运维/Rclone相关命令.md)
     - [定时自动备份更新网站的脚本](linux/运维/定时自动备份更新网站的脚本.md)
-
