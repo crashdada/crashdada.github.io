@@ -4,5 +4,5 @@
   - [OpenConnectVPN自签证书配置](linux/运维/OpenConnectVPN自签证书配置.md)
   - [OpenWRT路由器设置OpenConnectVPN](linux/运维/OpenWRT路由器设置OpenConnectVPN.md)
   - [Rclone相关命令](linux/运维/Rclone相关命令.md)
-  - [Ubuntu docker方式安装Adguardhome服务](linux/运维/Ubuntu docker方式安装Adguardhome服务.md)
+  - [Ubuntu-docker方式安装Adguardhome服务](linux/运维/Ubuntu-docker方式安装Adguardhome服务.md)
   - [定时自动备份更新网站的脚本](linux/运维/定时自动备份更新网站的脚本.md)

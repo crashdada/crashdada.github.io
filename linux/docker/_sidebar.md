@@ -1,6 +1,6 @@
 - [返回上一级 [linux]](linux/)
 - [docker](linux/docker/)
-  - [Docker Compose安装](linux/docker/Docker Compose安装.md)
+  - [Docker-Compose安装](linux/docker/Docker-Compose安装.md)
   - [Docker-qiandao自动签到程序安装教程](linux/docker/Docker-qiandao自动签到程序安装教程.md)
   - [Docker-Registry镜像加速与私有镜像仓库](linux/docker/Docker-Registry镜像加速与私有镜像仓库.md)
   - [Docker安装](linux/docker/Docker安装.md)
@@ -8,4 +8,4 @@
   - [Docker迁移varlibdocker目录](linux/docker/Docker迁移varlibdocker目录.md)
   - [Docker配置镜像加速及私有仓库](linux/docker/Docker配置镜像加速及私有仓库.md)
   - [Watchtower-自动更新Docker镜像与容器](linux/docker/Watchtower-自动更新Docker镜像与容器.md)
-  - [群晖docker部署AdGuard Home](linux/docker/群晖docker部署AdGuard Home.md)
+  - [群晖docker部署AdGuardHome](linux/docker/群晖docker部署AdGuardHome.md)
