@@ -1,2 +1,0 @@
-- [返回上一级 [js]](js/)
-- [design-pattern](js/design-pattern/)

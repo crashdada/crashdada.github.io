@@ -1,2 +1,0 @@
-- [返回上一级 [js]](js/)
-- [functional-programming](js/functional-programming/)

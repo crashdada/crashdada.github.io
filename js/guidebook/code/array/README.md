@@ -1,2 +1,0 @@
-- [返回上一级 [code]](js/guidebook/code/)
-- [array](js/guidebook/code/array/)

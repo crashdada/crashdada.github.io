@@ -1,2 +1,0 @@
-- [返回上一级 [guidebook]](js/guidebook/)
-- [images](js/guidebook/images/)
