@@ -5,31 +5,31 @@
 下载
 
 ```shell
-wget https://github.com/fatedier/frp/releases/download/v0.30.0/frp_0.30.0_linux_amd64.tar.gz
+wget https://github.com/fatedier/frp/releases/download/v0.37.1/frp_0.37.1_linux_amd64.tar.gz
 ```
 
 解压
 
 ```shell
-tar -zxvf frp_0.30.0_linux_amd64.tar.gz
+tar -zxvf frp_0.37.1_linux_amd64.tar.gz
 ```
 
 进入下载的文件夹
 
 ```shell
-cd frp_0.30.0_linux_amd64
+cd frp_0.37.1_linux_amd64
 ```
 
 创建frps文件夹
 
 ```shell
-mkdir -p /usr/local/frps
+mkdir -p /home/wwwroot/frps
 ```
 
 移动frps文件
 
 ```shell
-mv frps frps.ini /usr/local/frps
+mv frps frps.ini /home/wwwroot/frps
 ```
 
 ## 配置frps.ini
@@ -37,7 +37,7 @@ mv frps frps.ini /usr/local/frps
 编辑frps.ini
 
 ```shell
-vi /usr/local/frps/frps.ini
+vi /home/wwwroot/frps/frps.ini
 ```
 
 frps.ini参考如下
@@ -53,12 +53,12 @@ vhost_http_port = 80
 vhost_https_port = 443
 dashboard_addr = 0.0.0.0
 dashboard_port = 7500
-dashboard_user = admin
+dashboard_user = jaymz
 dashboard_pwd = admin
 log_file = ./frps.log
 log_level = info
 log_max_days = 3
-token = www.ioiox.com
+token = crashdada
 allow_ports = 2000-3000,3001,3003,4000-50000
 max_pool_count = 50
 max_ports_per_client = 0
@@ -86,10 +86,14 @@ Wants=network.target
 Type=simple
 Restart=on-failure
 RestartSec=5s
-ExecStart=/usr/local/frps/frps -c /usr/local/frps/frps.ini
+ExecStart=/home/wwwroot/frps/frps -c /home/wwwroot/frps/frps.ini
 
 [Install]
 WantedBy=multi-user.target
+```
+
+```shell
+sudo systemctl daemon-reload
 ```
 
 启动frps

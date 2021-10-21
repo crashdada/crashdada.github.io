@@ -82,7 +82,7 @@ sudo systemctl restart systemd-resolved
 此时执行下方命令, 即可启动AdGuard Home容器(注意68端口已经被换成69端口) :
 
 ```shell
-docker run --name adguardhome -v /home/jaymz/Docker/adguardhome/work:/opt/adguardhome/work -v /home/jaymz/Docker/adguardhome/conf:/opt/adguardhome/conf -p 53:53/tcp -p 53:53/udp -p 67:67/udp -p 69:68/tcp -p 69:68/udp -p 80:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp -d adguard/adguardhome
+docker run --name adguardhome --restart=always -v /home/jaymz/Docker/adguardhome/work:/opt/adguardhome/work -v /home/jaymz/Docker/adguardhome/conf:/opt/adguardhome/conf -p 53:53/tcp -p 53:53/udp -p 67:67/udp -p 69:68/tcp -p 69:68/udp -p 80:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp -d adguard/adguardhome
 ```
 
 ## 初始化AdGuard Home
