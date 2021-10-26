@@ -1,4 +1,4 @@
-# frp相关配置及命令
+# frp服务端配置
 
 ## 下载安装
 
@@ -118,3 +118,8 @@ sudo systemctl restart frps   # 重启frps
 sudo systemctl stop frps      # 关闭frps
 netstat -ntlp                 # 查看frps相关端口信息
 ```
+
+### 检查服务器端安装情况
+
+输入`http://服务器IP:7500`来查看 frps 服务状态
+
