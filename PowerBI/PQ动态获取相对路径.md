@@ -9,13 +9,16 @@
 ## 构建路径表
 
 然后开始构建路径表，新建两列，一列手动输入源文件的文件名，另一列输入公式`=LEFT(CELL("filename"),FIND("[",CELL("filename"))-1)&A2&".xlsx"`，返回C:\Users\Admin\Desktop\表1.xlsx。公式中&右边的部分根据实际情况自行修改，就是用left+find截取cell返回的左边部分，然后&自己的文件路径，很简单我就不详细介绍了，公式输完看下结果是否为正确的路径。
-![](C:\Users\jaymz\Desktop\path1.jpg)
+
+![path1](../_media/path1.jpg)
 
 ## 导入PQ
 
 路径表做好后，将其导入PQ，创建一个新的查询为"路径表"，当然名字你可以随便起，那么其他表的路径只需要深化出"路径表"中对应的路径，即为相对路径。比如常规导入excel文件生成的公式为`= Excel.Workbook(File.Contents("C:\Users\Admin\Desktop\表3.xlsx"), null, true)`
 那么我们只需要把绝对路径替换为"路径表"中对应的相对路径即可，"表3"的路径在"路径表"中[路径]字段下的第3行，也就是`路径表[路径]{2}`，替换得到`= Excel.Workbook(File.Contents(路径表[路径]{2}), null, true)`
-![](C:\Users\jaymz\Desktop\path2.jpg)
+
+![path2](../_media/path2.jpg)
+
 看下返回的结果是不是和替换前一摸一样？至此动态获取相对路径完成。
 
 需要注意的是，创建路径表有两种方式：
@@ -26,5 +29,5 @@
 请根据自身情况选择。
 
 如出现以下错误，点击文件-文件和设置-查询选项，把隐私设置为始终忽略即可。
-![error](C:\Users\jaymz\Desktop\error.png)
 
+![error](../_media/error.png)
