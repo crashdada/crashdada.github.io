@@ -23,6 +23,8 @@
     - [Ubuntu20.04&18.04快速开启BBR](linux/xiaobai/Ubuntu20.04&18.04快速开启BBR.md)
     - [ubuntu20.04系统初始化与美化](linux/xiaobai/ubuntu20.04系统初始化与美化.md)
     - [Ubuntu初始化](linux/xiaobai/Ubuntu初始化.md)
+    - [VPS时间同步教程](linux/xiaobai/VPS时间同步教程.md)
+    - [VPS综合测试脚本](linux/xiaobai/VPS综合测试脚本.md)
   - [运维](linux/运维/)
     - [img](linux/运维/img/)
     - [OpenConnectVPN自签证书配置](linux/运维/OpenConnectVPN自签证书配置.md)
