@@ -1,3 +1,4 @@
 - [返回上一级 [linux]](linux/)
 - [others](linux/others/)
   - [frp相关配置及命令](linux/others/frp相关配置及命令.md)
+  - [从pt到家庭媒体中心全攻略](linux/others/从pt到家庭媒体中心全攻略.md)

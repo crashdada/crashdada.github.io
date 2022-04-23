@@ -1,6 +1,8 @@
 - [返回上一级 [linux]](linux/)
 - [运维](linux/运维/)
+  - [crontab常规命令](linux/运维/crontab常规命令.md)
   - [img](linux/运维/img/)
+  - [iptables](linux/运维/iptables.md)
   - [OpenConnectVPN自签证书配置](linux/运维/OpenConnectVPN自签证书配置.md)
   - [OpenWRT路由器设置OpenConnectVPN](linux/运维/OpenWRT路由器设置OpenConnectVPN.md)
   - [Rclone相关命令](linux/运维/Rclone相关命令.md)
