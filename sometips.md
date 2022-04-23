@@ -5,9 +5,9 @@ esxi备份
 ```shell
 cd C:\Program Files (x86)\VMware\VMware Workstation\OVFTool
 
-.\ovftool.exe vi://root@192.168.31.55/ubuntu-s1 D:\esxi-back
+.\ovftool.exe vi://root@192.168.31.254/win10 D:\esxi-back
 
-.\ovftool.exe -ds=datastore1 -dm=thin -n=ubuntu-s1 "D:\esxi-back\ubuntu-s1\ubuntu-s1.ovf" vi://root@192.168.31.55
+.\ovftool.exe -ds=datastore1 -dm=thin -n=ubuntu-s1 "D:\esxi-back\win10\win10.ovf" vi://root@192.168.31.254
 
 ```
 
