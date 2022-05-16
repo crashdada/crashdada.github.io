@@ -28,27 +28,27 @@ Hello 大家好，这里是一名折腾党，从入坑NAS七天，从I3 3220T �
 
 HZ拿到手后，他会发送给你root密码，但是！！我一次都没有通过它给的密码进去过！！重装系统也是，所以这次我们不用他面板提供的重装系统，采用的是quickbox-lite的脚本一键重装系统和安装bbr，首先进入hz的robot界面
 
-![图片[1]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\c4ca4238a0b9.png)
+![图片[1]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/c4ca4238a0b9.png)
 
 找到左边的Server，就会显示你购买的服务器，点一下你购买的服务器，然后选择Rescue，这个Rescue是**下一次重启**后进入救援页面，我们选择Linux 64bit，然后点击Activate rescue system
 
-![图片[2]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\c81e728d9d4c.png)
+![图片[2]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/c81e728d9d4c.png)
 
-![图片[3]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\eccbc87e4b5c.png)
+![图片[3]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/eccbc87e4b5c.png)
 
 接下来，他会给你一个救援密码，这个密码复制到笔记本上面记好，后面要用
 
-![图片[4]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\a87ff679a2f3.png)
+![图片[4]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/a87ff679a2f3.png)
 
 选择救援模式后，我们重启服务器，进入救援模式
 
-![图片[5]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\e4da3b7fbbce.png)
+![图片[5]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/e4da3b7fbbce.png)
 
 ###  1.2. 重装系统，安装BBR加速
 
 到这里，我们的服务器就已经进入了救援模式，然后通过FinalShell远程连接至服务器，用户名为root，密码是当时出现的救援密码，进入系统后，什么都不要输入，直接输入一键重装系统脚本
 
-![图片[6]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\1679091c5a88.png)
+![图片[6]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/1679091c5a88.png)
 
 重装为Debian 10命令（二选一即可）：
 
@@ -62,11 +62,11 @@ Ubuntu 18.04命令：
 echo x | installimage -p /boot:ext3:1G,/:ext4:all -l 0 -r yes -i images/Ubuntu-1804-bionic-64-minimal.tar.gz -a -n Hz && reboot 
 ```
 
-![图片[7]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\8f14e45fceea.png)
+![图片[7]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/8f14e45fceea.png)
 
 重装完成后，会自动重启，我重新链接，进入Debian系统，用户名是root，密码也是救援密码，进去后第一件事情就是修改密码！！ 输入passwd，然后输入两次新密码即可
 
-![图片[8]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\c9f0f895fb98.png)
+![图片[8]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/c9f0f895fb98.png)
 
 接下来我们安装魔改版bbr加速
 
@@ -74,11 +74,11 @@ echo x | installimage -p /boot:ext3:1G,/:ext4:all -l 0 -r yes -i images/Ubuntu-1
 bash <(wget -qO- https://git.io/AccTCP -o /dev/null)
 ```
 
-![图片[9]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\45c48cce2e2d.png)
+![图片[9]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/45c48cce2e2d.png)
 
 输入3，选择南琴浪版本，然后系统会自动安装内核等一系列依赖，等待即可
 
-![图片[10]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\d3d9446802a4.png)
+![图片[10]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/d3d9446802a4.png)
 
 到这一步，我们的魔改版BBR就已经安装完了，接下来就是安装星大的Deluge和flexget的一键安装脚本即可
 
@@ -88,9 +88,7 @@ bash <(wget -qO- https://git.io/AccTCP -o /dev/null)
 
 ```
 bash <(wget --no-check-certificate -qO- https://github.com/Aniverse/inexistence/raw/master/inexistence.sh) \
-
 -y --tweaks --bbr --rclone --no-system-upgrade --flexget --tr-deb --filebrowser \
-
 --de 1.3.15 --rt 0.9.8 --qb 4.1.9 -u 这十二个字换成你的用户名 -p 这十个字换成你的密码
 ```
 
@@ -98,21 +96,19 @@ bash <(wget --no-check-certificate -qO- https://github.com/Aniverse/inexistence/
 
 ```
 bash <(wget --no-check-certificate -qO- https://github.com/Aniverse/inexistence/raw/master/inexistence.sh) \
-
 -y --tweaks --no-system-upgrade --flexget \
-
---de 1.3.15 -u 用户名 -p 密码
+--de 1.3.15 --qb 4.2.5 -u XXX -p XXX
 ```
 
-![图片[11]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\c6bff625bdb0.png)
+![图片[11]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/c6bff625bdb0.png)
 
 回车之后，他会问你是否安装Qbittorrent，rTorrent，Transmission，我们不需要这些，所以全部输入99，然后就问你需不需安装FileBrowser，我们也不需要 选择no，回车过后，系统就进入了一键配置状态，等待安装完毕，他会告诉你后台地址，把后台地址复制下来，避免忘记了。
 
-![图片[12]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\c20ad4d76fe9.png)
+![图片[12]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/c20ad4d76fe9.png)
 
 安装完毕后的界面
 
-![图片[13]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\c51ce410c124.png)
+![图片[13]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/c51ce410c124.png)
 
 到此为止，Deluge安装好了，Flexget也安装好了，我们进入下一步 配置Deluge和Flexget进行自动下载
 
@@ -120,11 +116,11 @@ bash <(wget --no-check-certificate -qO- https://github.com/Aniverse/inexistence/
 
 我们通过  你服务器IP:8112 进入Deluge后台，一定要先配置好Deluge，因为一旦你开始下载后，你就会发现你的Deluge Web总是断开，就没办法配置了！ 我们点击preferences 进入设置
 
-![图片[14]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\aab3238922bc.png)
+![图片[14]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/aab3238922bc.png)
 
 选择Itconfig ，然后右边选择High Performance Seed，点击Load Preset 加载配置，然后我们进行一个逐步优化
 
-![图片[15]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\9bf31c7ff062.png)
+![图片[15]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/9bf31c7ff062.png)
 
 优化参数（部分参数找不到，这个我也不知道怎么搞，目前我是一条一条搜索 然后替换值，如果大家有更好的办法，可以告诉我），取自于 https://blog.stomtian.com/index.php/pt/28/
 
@@ -161,7 +157,7 @@ use_read_cache = true;
 write_cache_line_size = 512;
 ```
 
-![图片[16]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\c74d97b01eae.png)
+![图片[16]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/c74d97b01eae.png)
 
 Ctrl+F 一个个查找 并且修改值，前面要打对勾，最后选择Apply 保存应用，Deluge就已经配置完了，接下来我们配置Flexget
 
@@ -169,15 +165,15 @@ Ctrl+F 一个个查找 并且修改值，前面要打对勾，最后选择Apply 
 
 网址：IP:9566  进入后台，用户名为：flexget  密码为自己设置的，进入后，直接点击左边的Config配置文件
 
-![图片[17]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\70efdf2ec9b0.png)
+![图片[17]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/70efdf2ec9b0.png)
 
 进入config后，Deluge模板 星大已经帮我们配置好了，我们只需要设置下载规则，以及定时规则即可，进去后往下拉，把我用红框框勾选的区域，全部删掉
 
-![图片[18]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\6f4922f45568.png)
+![图片[18]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/6f4922f45568.png)
 
 删除后呢，将配置改成我这个样子，【】的地方填写你们的信息
 
-![图片[19]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\1f0e3dad9990.png)
+![图片[19]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/1f0e3dad9990.png)
 
 接下来逐个讲解一下这几个参数的含义
 
@@ -205,7 +201,7 @@ schedules是自动执行任务的标签，这里我们可以用crontab代替，�
 
 如果你不想下载已有的种子，只想下载新种子，那么你可以选择左边菜单栏的Tasks,按照以下几个步骤执行，他会将已经抓取的种子记录下来，然后不下载，等到新种子来了就会下载新种子，执行完毕后，也可以在该页面查看日志，添加了多少个种子 等
 
-![图片[20]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\98f137082101.png)
+![图片[20]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/98f137082101.png)
 
 ## 4. 配置AutoRemove-torrents
 
@@ -221,7 +217,7 @@ pip install autoremove-torrents
 
 一顿操作之后，系统就已经自动安装好了
 
-![图片[21]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\37693cfc7480.png)
+![图片[21]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/37693cfc7480.png)
 
 然后我们查找一下这个目录在哪里，后面要用到的
 
@@ -229,7 +225,7 @@ pip install autoremove-torrents
 find / -name 'autoremove-torrents'
 ```
 
-![图片[22]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\1ff1de774005.png)
+![图片[22]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/1ff1de774005.png)
 
 可以看到有一个是flexget里的 这个我们不要，我们要第一个，把路径记录下来 我们后面要用到
 
@@ -246,7 +242,7 @@ touch config.yml
 
 接下来我们用FinalShell对config.yml进行写入
 
-![图片[23]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\8e296a067a37.png)
+![图片[23]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/8e296a067a37.png)
 
 如果root目录下没有AutoRemove这个文件夹 点击刷新一下就会出来了，然后我们右键config.yml，选择以文本编辑器打开，并把一下代码粘贴进去
 
@@ -292,7 +288,7 @@ cd /root/AutoRemove
 autoremove-torrents --view
 ```
 
-![图片[24]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\4e732ced3463.png)
+![图片[24]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/4e732ced3463.png)
 
 当我们看到这个提示信息的时候，说明Autoremove配置文件没有出问题，可以正常运行，然后进行最后一步，定时任务
 
@@ -312,11 +308,11 @@ crontab -e
  */15 * * * * /usr/local/bin/autoremove-torrents --conf=/root/AutoRemove/config.yml --log=/root/AutoRemove
 ```
 
-![图片[25]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\02e74f10e032.png)
+![图片[25]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/02e74f10e032.png)
 
 然后Ctrl+X ，输入Y 回车，保存crontab文件
 
-![图片[26]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\33e75ff09dd6.png)
+![图片[26]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/33e75ff09dd6.png)
 
 显示这个就代表已经更新了定时任务，这个任务是每隔15分钟执行一次删除任务，配置文件在root下的AutoRemove下的config配置文件，日志在AutoRemove文件夹下，大家可以把15改成1，然后看看有没有日志产生，如果有日志产生说明定时没有问题，再把1改成15就可以了
 
@@ -334,15 +330,15 @@ crontab -e
 
 1. ### 如何生成Rss链接？
 
-![图片[27]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\6ea9ab1baa0e.png)
+![图片[27]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/6ea9ab1baa0e.png)
 
 点击右上角这个符号，然后把相关板块勾上，数量根据你的服务器配置选择，选择在20-50之间，然后选择生成链接
 
-![图片[28]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\3c59dc048e88.png)
+![图片[28]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/3c59dc048e88.png)
 
 获取的链接我们只要底下一个，不要第一个
 
-![图片[29]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\b6d767d2f8ed.png)
+![图片[29]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/b6d767d2f8ed.png)
 
 这样 我们就获取到了我们想要的rss链接了~
 
@@ -350,11 +346,11 @@ crontab -e
 
 按F12，或者右键审查元素，检查等，进入控制面板，然后找到NetWork（又叫网络）这个选项，然后把数据包都清空掉，我图片有
 
-![图片[30]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\34173cb38f07.png)
+![图片[30]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/34173cb38f07-16526839496411.png)
 
 然后我们**刷新页面**，选择第一个数据包，往下拖，就可以看到cookie了，把双引号里面的所有内容全部复制下来就是cookie了
 
-![图片[31]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](D:\jaymz\docsblog\crashdada.github.io\_media\c16a5320fa47.png)
+![图片[31]-PT盒子搭建，以及全自动下载删除教程（保姆级）-宅博客](_media/c16a5320fa47.png)
 
 ### 3.常见问题
 
