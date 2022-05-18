@@ -8,5 +8,5 @@
 
 
 * [PowerBI](PowerBI/)
-  * [Power Query](Power Query/)
+  * [PowerQuery](PowerQuery/)
 
