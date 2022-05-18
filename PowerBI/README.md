@@ -1,3 +1,4 @@
 - [返回首页](/)
 - [PowerBI](PowerBI/)
-  - [PQ动态获取相对路径](PowerBI/PQ动态获取相对路径.md)
+  - [Power Query](PowerBI/Power Query/)
+    - [PQ动态获取相对路径](PowerBI/Power Query/PQ动态获取相对路径.md)
