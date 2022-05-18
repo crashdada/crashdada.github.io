@@ -1,6 +1,5 @@
 - [返回上一级 [linux]](linux/)
 - [others](linux/others/)
-  - [_media](linux/others/_media/)
   - [frp相关配置及命令](linux/others/frp相关配置及命令.md)
   - [PT实用工具&脚本分享](linux/others/PT实用工具&脚本分享.md)
   - [PT盒子搭建，以及全自动下载删除教程](linux/others/PT盒子搭建，以及全自动下载删除教程.md)

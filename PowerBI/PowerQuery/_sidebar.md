@@ -1,0 +1,3 @@
+- [返回上一级 [PowerBI]](PowerBI/)
+- [PowerQuery](PowerBI/PowerQuery/)
+  - [PQ动态获取相对路径](PowerBI/PowerQuery/PQ动态获取相对路径.md)
