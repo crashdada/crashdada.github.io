@@ -1,6 +1,6 @@
 <!-- _navbar.md -->
 
-* Linux
+* [Linux](linux/)
   * [docker](linux/docker/)
   * [xiaobai](linux/xiaobai/)
   * [others](linux/others/)
@@ -8,5 +8,5 @@
 
 
 * [PowerBI](PowerBI/)
-  * [PowerQuery](PowerQuery/)
+  * [PowerQuery](PowerBI/PowerQuery/)
 
